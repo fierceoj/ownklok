@@ -15,5 +15,7 @@ The OKLOK (3.1.1) mobile companion app for Fingerprint Bluetooth Padlock FB50 (2
 
 # Disclaimer
 
-# Acknowledgments
+# Disclosure Notes
 
+# Acknowledgments
+remember to acknowledge securelayer7 here (CVE-2019-13143)

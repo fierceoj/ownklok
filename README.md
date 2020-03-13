@@ -14,12 +14,12 @@ This repo also contains a full attack demo (attack_demo.py) to illustrate an att
 This project is made for educational and ethical testing purposes only. Usage of ownklok scripts for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
 
 # Disclosure Notes
-1st outreach to vendors on 1/20/2020
-CERT/CC notified on 1/29/2020
-2nd outreach to vendors, CNCERT/CC notified on 1/31/2020
-CVEs reserved on 2/7/2020
-Publicly disclosed on 4/30/2020
-
+- 1st outreach to vendors on 1/20/2020 <br/>
+- CERT/CC notified on 1/29/2020 <br/>
+- 2nd outreach to vendors, CNCERT/CC notified on 1/31/2020 <br/>
+- CVEs reserved on 2/7/2020 <br/>
+- Publicly disclosed on 4/30/2020 <br/>
+<br/>
 There has been no response from the vendors.
 
 # Acknowledgments

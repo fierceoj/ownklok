@@ -29,5 +29,5 @@ IDOR issues similar to CVE-2020-8791 were expressed in prior research on similar
 - [OKLOK mobile app/FB50 lock research](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/) by SecureLayer7 
     - CVE-2019-13143 allows an attacker to transfer ownership of the lock from the victim account to the attacker account
 - [Nokelock mobile app and lock research](https://www.pentestpartners.com/security-blog/pwning-the-nokelock-api/) by Pen Test Partners
-- [Klic mobile app/Tzumi Klic lock research](https://github.com/whitehatdefenses/KlicUnLock) (CVE-2019-11334) by WhiteHat Defenses
+- [Klic mobile app/Tzumi Klic lock research](https://github.com/whitehatdefenses/KlicUnLock) by WhiteHat Defenses
     - CVE-2019-11334 allows a physically proximate attacker to unlock the lock

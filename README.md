@@ -26,6 +26,6 @@ There has been no response from the vendors.
 
 # Acknowledgments
 IDOR issues similar to CVE-2020-8791 were expressed in prior research on similar locks/apps:
-- Nokelock research by [Pen Test Partners](https://www.pentestpartners.com/security-blog/pwning-the-nokelock-api/) 
-- OKLOK app/FB50 lock research by [SecureLayer7](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/) (CVE-2019-13143)
-- Klic app/Tzumi Klic lock research by [WhiteHat Defenses](https://github.com/whitehatdefenses/KlicUnLock)
+- [Nokelock research](https://www.pentestpartners.com/security-blog/pwning-the-nokelock-api/)by Pen Test Partners
+- OKLOK app/FB50 lock research(https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/) (CVE-2019-13143) by SecureLayer7 
+- [Klic app/Tzumi Klic lock research](https://github.com/whitehatdefenses/KlicUnLock) by WhiteHat Defenses

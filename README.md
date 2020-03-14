@@ -4,7 +4,7 @@ PoCs for vulnerabilities in the OKLOK (3.1.1) mobile companion app for Fingerpri
 ```CVE-2020-8791``` <br/>
 ```CVE-2020-8792```
 
-This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines CVE-2020-8791 and [CVE-2019-13143](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/).
+This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines the CVE-2020-8791 exploit and an exploit inspired by [CVE-2019-13143](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/).
 
 # Requirements
 - python3 <br/>
@@ -23,4 +23,9 @@ This project is made for educational and ethical testing purposes only. Usage of
 There has been no response from the vendors.
 
 # Acknowledgments
+IDOR issues similar to CVE-2020-8791 were noted in prior research on similar locks/apps:
+- Android Nokelock app research by [Pen Test Partners](https://www.pentestpartners.com/security-blog/pwning-the-nokelock-api/)
+- Android Nokelock app research by [SecureLayer7](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/)
+- 
+
 remember to acknowledge securelayer7 here (CVE-2019-13143)

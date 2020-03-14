@@ -4,7 +4,7 @@ PoCs for vulnerabilities in the OKLOK (3.1.1) mobile companion app for Fingerpri
 ```CVE-2020-8791``` <br/>
 ```CVE-2020-8792```
 
-This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines CVE-2020-8791 and [CVE-2019-13143] (https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/).
+This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines CVE-2020-8791 and [CVE-2019-13143] (https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/ "CVE-2019-13143").
 
 # Requirements
 - python3 <br/>

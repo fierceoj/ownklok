@@ -6,7 +6,7 @@ PoCs for vulnerabilities in the OKLOK (3.1.1) mobile companion app for Fingerpri
 
 Tested on iOS.
 
-This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines the CVE-2020-8791 exploit and a modified version of the [CVE-2019-13143](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/) exploit ([pwnfb50.py](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)).
+This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines my CVE-2020-8791 exploit with a modified version of the CVE-2019-13143 exploit by SecureLayer7 ([pwnfb50.py](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)).
 
 # Requirements
 - python3 <br/>
@@ -25,9 +25,7 @@ This project is made for educational and ethical testing purposes only. Usage of
 There has been no response from the vendors.
 
 # Acknowledgments
-IDOR issues similar to CVE-2020-8791 were noted in prior research on similar locks/apps:
-- Android Nokelock app research by [Pen Test Partners](https://www.pentestpartners.com/security-blog/pwning-the-nokelock-api/)
-- Android Nokelock app research by [SecureLayer7](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/)
-- 
-
-remember to acknowledge securelayer7 here (CVE-2019-13143)
+IDOR issues similar to CVE-2020-8791 were expressed in prior research on similar locks/apps:
+- Nokelock research by [Pen Test Partners](https://www.pentestpartners.com/security-blog/pwning-the-nokelock-api/) 
+- OKLOK app/FB50 lock research by [SecureLayer7](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/) (CVE-2019-13143)
+- Klic app/Tzumi Klic lock research by [WhiteHat Defenses](https://github.com/whitehatdefenses/KlicUnLock)

@@ -6,7 +6,7 @@ PoCs for vulnerabilities in the OKLOK (3.1.1) mobile companion app for Fingerpri
 
 Tested on iOS.
 
-This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines my CVE-2020-8791 exploit with a modified version of the CVE-2019-13143 exploit by SecureLayer7 ([pwnfb50.py](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)).
+This repo also contains two full attack scenarios which combine my CVE-2020-8791 exploit with a modified version of the CVE-2019-13143 exploit by SecureLayer7 ([pwnfb50.py](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)).
 
 # Requirements
 - python3 <br/>

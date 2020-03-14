@@ -1,10 +1,10 @@
 # ownklok
-PoCs for vulnerabilities in the OKLOK (3.1.1) mobile companion app for Fingerprint Bluetooth Padlock FB50 (2.3).
+PoCs for vulnerabilities in the OKLOK (3.1.1) mobile companion app for Fingerprint Bluetooth Padlock FB50 (2.3). Tested on iOS.
 ```CVE-2020-8790``` <br/>
 ```CVE-2020-8791``` <br/>
 ```CVE-2020-8792```
 
-This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines the CVE-2020-8791 exploit and an exploit inspired by [CVE-2019-13143](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/).
+This repo also contains a full attack demo (attack_demo.py) to illustrate an attack scenario which combines the CVE-2020-8791 exploit and a modified version of the [CVE-2019-13143](https://blog.securelayer7.net/fb50-smart-lock-vulnerability-disclosure/) exploit ([pwnfb50.py](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py).
 
 # Requirements
 - python3 <br/>

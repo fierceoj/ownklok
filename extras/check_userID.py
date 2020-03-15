@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
+#Code to check the userID of your OKLOK account
+
 import requests
 import json
 import sys
 import getpass
 
-
+#login to the account
+#grab and print the userID
 def acct_login(email_address, password):
     
     url = 'https://app.oklok.com.cn/oklock/user/loginByPassword'
@@ -22,7 +25,6 @@ def acct_login(email_address, password):
 
     print('\n-------------------------------------------------------------')
     print('Logging in...')
-
     
     response = requests.post(url, data=json.dumps(body), headers=login_headers)
     json_resp = response.json()

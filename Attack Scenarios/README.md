@@ -7,7 +7,7 @@ In this scenario, a physically proximate attacker unbinds a lock from a victim a
 # Usage
 ```python3 attack_scenario_remote.py <victim_userID> <attacker_email_address>```
 
-`<victim_userID>` = the userID of the victim account
+`<victim_userID>` = the userID of the victim account <br/>
 `<attacker_email_address>` = the email address of the attacker account to which the lock will be bound (account will also be used to generate an accepted token for the HTTP headers)
 
 # Demos

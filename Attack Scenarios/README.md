@@ -31,6 +31,9 @@ The attack_scenario_remote.py script runs as shown below.
 
 ![alt text](../screenshots/attack_scenario_remote.png)
 
+The userdata.csv file is created in the same directory as the script.
+![alt text](../screenshots/userdata_csv_image.png)
+
 ### Proximate
 To use attack_scenario_proximate.py, first get the device MAC address of the target device in range.
 

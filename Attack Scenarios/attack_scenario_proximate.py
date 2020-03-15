@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+#PoC attack scenario based on CVE-2020-8791 and CVE-
+#unbind lock from victim account, bind to attacker account, retrieve user account details
+
 import requests
 import json
 import sys

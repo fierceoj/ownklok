@@ -12,6 +12,7 @@ import datetime
 import getpass
 
 #login to the attacker account and obtain attacker token to be used in further HTTP requests
+#get attacker user ID for binding the lock later
 def login_attacker(attacker_email_address, attacker_password):
         
     url = 'https://app.oklok.com.cn/oklock/user/loginByPassword'

@@ -169,8 +169,8 @@ def main():
 
     start_time = datetime.datetime.now()
 
-    if len(sys.argv) < 2:
-        sys.exit('Usage: attack_scenario_proximate.py <victim_mac> <attacker_email_address>')
+    if len(sys.argv) is not 3:
+        sys.exit('Usage: python3 attack_scenario_proximate.py <victim_mac> <attacker_email_address>')
     else:
         victim_mac = sys.argv[1]
         attacker_email_address = sys.argv[2]
@@ -243,5 +243,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 

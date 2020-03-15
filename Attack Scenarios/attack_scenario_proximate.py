@@ -229,6 +229,7 @@ def main():
     print('USER ACCOUNT INFO:')
     print('=============================================================')
 
+    print('userId: ' + str(victim_userID))
     print('account creation: ' + str(acct_creation))
     print('cid: ' + str(cid))
     print('nickname: ' + str(nickname))

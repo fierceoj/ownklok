@@ -3,7 +3,7 @@
 #PoC remote attack scenario based on CVE-2020-8791 and CVE-2019-13143 
 #See original CVE-2019-13143 PoC exploit code by securelayer7 (https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)
 
-#unbind lock from victim account, bind to attacker account, retrieve user account details, generate userdata.csv
+#unbind lock from OKLOK victim account, bind to attacker account, retrieve user account details, generate userdata.csv
 
 import requests
 import json

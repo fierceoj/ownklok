@@ -6,8 +6,6 @@ PoC code for vulnerabilities in the OKLOK (3.1.1) mobile companion app for Finge
 
 This repo also contains two full attack scenarios which combine my CVE-2020-8791 exploit with methods similar to the CVE-2019-13143 exploit by SecureLayer7 ([pwnfb50.py](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)).
 
-Tested on iOS.
-
 # Requirements
 - python3 <br/>
 - requests module
@@ -31,3 +29,6 @@ IDOR issues similar to CVE-2020-8791 were expressed in prior research on similar
 - [Nokelock mobile app and lock research](https://www.pentestpartners.com/security-blog/pwning-the-nokelock-api/) by Pen Test Partners
 - [Klic mobile app/Tzumi Klic lock research](https://github.com/whitehatdefenses/KlicUnLock) by WhiteHat Defenses
     - CVE-2019-11334 allows a physically proximate attacker to unlock the lock
+    
+# Other Notes
+Tested on iOS.

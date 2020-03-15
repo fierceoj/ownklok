@@ -21,4 +21,8 @@ In this scenario, a physically proximate attacker unbinds a lock from a victim a
 `<victim_mac>` = the MAC address of the lock <br/>
 `<attacker_email_address>` = the email address of the attacker account to which the lock will be bound (account will also be used to generate an accepted token for the HTTP headers)
 
+**DISCLAIMER:** Use these scripts only against userIDs and device MAC addresses that you own. To check your userIDs, use the check_userID.py script in the 'extras' folder of this repo, or run the OKLOK mobile app through a proxy and observe the userID transmitted in the web requests. To check your MAC address, use hcitool or a similar BLE-compatible tool. 
+
 # Demos
+
+

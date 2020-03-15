@@ -10,4 +10,9 @@ In this scenario, a physically proximate attacker unbinds a lock from a victim a
 `<victim_userID>` = the userID of the victim account <br/>
 `<attacker_email_address>` = the email address of the attacker account to which the lock will be bound (account will also be used to generate an accepted token for the HTTP headers)
 
+```python3 attack_scenario_proximate.py <victim_mac> <attacker_email_address>```
+
+`<victim_mac>` = the MAC address of the lock <br/>
+`<attacker_email_address>` = the email address of the attacker account to which the lock will be bound (account will also be used to generate an accepted token for the HTTP headers)
+
 # Demos

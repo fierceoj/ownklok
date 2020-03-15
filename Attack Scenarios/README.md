@@ -25,8 +25,10 @@ In this scenario, a physically proximate attacker unbinds a lock from a victim a
 
 # Demos
 
-Proximate
----------
+### Remote
+The attack_scenario_remote.py 
+
+### Proximate
 To use attack_scenario_proximate.py, first get the device MAC address of the target device in range.
 
 ![alt text](../screenshots/hcitool_lescan.png)

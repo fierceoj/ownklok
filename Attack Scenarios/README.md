@@ -39,3 +39,6 @@ To use attack_scenario_proximate.py, first get the device MAC address of the tar
 Then, run the script against the MAC address. 
 ![alt text](../screenshots/attack_scenario_proximate.png)
 
+# Acknowledgements
+Both scenarios took inspiration from the PoC [here](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py), and similar methods were used for the unbind and bind portions of the code. See Acknowledgements section on the root README.md.
+

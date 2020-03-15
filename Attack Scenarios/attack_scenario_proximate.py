@@ -170,7 +170,7 @@ def main():
     start_time = datetime.datetime.now()
 
     if len(sys.argv) < 2:
-        sys.exit('Usage: oklokpick.py <victim_mac> <attacker_email_address>')
+        sys.exit('Usage: attack_scenario_proximate.py <victim_mac> <attacker_email_address>')
     else:
         victim_mac = sys.argv[1]
         attacker_email_address = sys.argv[2]

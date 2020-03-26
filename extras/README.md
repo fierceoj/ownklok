@@ -1,7 +1,7 @@
 # Extra Helper Code
 
 ## check_userID.py
->Script that allows the user to login to an account and check its userID.
+>Script that allows the user to login to an account and check the userID. This script can be used to find your userIDs, so they can be tested with ownklok_idor.py and attack_scenario_remote.py.
 
 ## Usage
 ```python3 check_userID.py <email_address>```

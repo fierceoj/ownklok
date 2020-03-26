@@ -15,4 +15,4 @@ Given the security vulnerabilities in the OKLOK mobile application, users should
 In summary, to mitigate some of the possible attacks and privacy issues, use a strong and unique password, use a junk email address to register the account, do not use personally identifying names anywhere in the app, and be aware of the phishing opportunities available to an attacker. Understand that even with these mitigatations:
   - An attacker can still open the lock if in physical proximity.
   - An attacker can still bypass account verification to change an account's password, granting the attacker access to the OKLOK account and the lock. 
-  - An attacker can still remotely unbind any lock from any OKLOK user account and bind it to their own, therby making the lock inaccessible through the app to the original owner.
+  - An attacker can still remotely unbind any lock from any OKLOK user account and bind it to their own, therby making the app's bind/unbind and unlock functions inaccessible through the app for the original owner.

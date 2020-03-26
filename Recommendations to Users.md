@@ -10,7 +10,7 @@ Given the security vulnerabilities in the OKLOK mobile application, users should
 - Legitimate OKLOK emails come from app[@]oklock[.]net with an originating IP address in the 198.11.142.0/24 range (Alibaba). The only OKLOK emails I have seen for the FB50 2.3 lock are automated verification code emails. 
   - Be vigilant of OKLOK phishing emails and social engineering tactics. Attackers can easily obtain real user account information and use it in the email as a pretext to make the email seem legitimate.
   - Be aware that an attacker could mess with your account or lock first, and then send a malicious email notifying you of the unauthorized actions. An attacker could use the email to deliver a malicious payload or phishing link.
-- There are no plans to patch the issues.
+- The vendors have not acknowledged the issues or expressed any plans to patch them.
   
 In summary, to mitigate some of the possible attacks and privacy issues, use a strong and unique password, use a junk email address to register the account, do not use personally identifying names anywhere in the app, and be aware of social engineering tactics.
   - Understand that an attacker can still open the lock if in physical proximity.

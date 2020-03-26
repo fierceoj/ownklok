@@ -2,7 +2,7 @@
 
 Given the security vulnerabilities in the OKLOK mobile application, users should be aware of the following warnings and recommendations:
 
-- Do not rely on any lock that uses the OKLOK app to secure anything valuable. It is trivial for an attacker to unlock the lock using one of several working methods. 
+- Any lock that uses the OKLOK mobile app should not be relied on to secure anything valuable. It is trivial for an attacker to unlock the lock using one of several working methods. 
 - An attacker can obtain user information for any random (non-targeted) user account. 
   - Do not use a password for the OKLOK app that you use elsewhere (It is bad security practice to reuse passwords in general). 
   - Do not use personally identifying names for the lock, fingerprints, or account nickname.

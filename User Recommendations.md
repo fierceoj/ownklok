@@ -1,4 +1,4 @@
-# Recommendations to Users
+# User Recommendations
 
 Given the security vulnerabilities in the OKLOK mobile application, users should be aware of the following warnings and recommendations:
 

@@ -29,7 +29,7 @@ Details are redacted in the demos.
 ### Remote
 The attack_scenario_remote.py script runs as shown below. 
 
-![alt text](../screenshots/attack_scenario_remote.png)
+![alt text](../screenshots/attack_scenario_remote_demo.png)
 
 The userdata.csv file is created in the same directory as the script.
 ![alt text](../screenshots/userdata_csv_image.png)
@@ -40,7 +40,7 @@ To use attack_scenario_proximate.py, first get the device MAC address of the tar
 ![alt text](../screenshots/hcitool_lescan.png)
 
 Then, run the script against the MAC address. 
-![alt text](../screenshots/attack_scenario_proximate.png)
+![alt text](../screenshots/attack_scenario_proximate_demo.png)
 
 # Acknowledgements
 Both scenarios took inspiration from the PoC [here](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py), and similar methods were used for the unbind and bind functions of the code. See Acknowledgements section on the root README.md.

@@ -7,3 +7,6 @@
 ```python3 check_userID.py <email_address>```
 
 `<email_address>` = the email address of the user account for which you want to check the userID
+
+## Demo
+The script output should look like the example below.

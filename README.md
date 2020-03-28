@@ -10,7 +10,7 @@ This repo also contains two attack scenarios which combine my CVE-2020-8791 expl
 # Requirements
 - python3 <br/>
 - requests module <br/>
-```pip3 install requests``` OR
+
 ```pip3 install -r requirements.txt```
 
 # Legal Disclaimer

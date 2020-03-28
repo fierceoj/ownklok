@@ -19,8 +19,8 @@ This project is made for educational and ethical testing purposes only. Usage of
 - 1st outreach to vendors on 1/20/2020 <br/>
 - CERT/CC notified on 1/29/2020 <br/>
 - 2nd outreach to vendors, CNCERT/CC notified on 1/31/2020 <br/>
-- Three CVEs reserved on 2/7/2020 <br/>
-- One CVE reserved on 3/23/2020 <br/>
+- CVE-2020-8790, CVE-2020-8791, CVE-2020-8792reserved on 2/7/2020 <br/>
+- CVE-2020-10876 reserved on 3/23/2020 <br/>
 - Publicly disclosed on 4/30/2020 <br/>
 <br/>
 There has been no response from the vendors.

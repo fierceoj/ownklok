@@ -34,4 +34,4 @@ IDOR issues similar to CVE-2020-8791 were expressed in prior research on similar
     - CVE-2019-11334 allows a physically proximate attacker to unlock the lock
     
 # Other Notes
-Tested on iOS mobile app.
+Tested against iOS mobile app.

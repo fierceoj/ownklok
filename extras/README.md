@@ -9,4 +9,6 @@
 `<email_address>` = the email address of the user account for which you want to check the userID
 
 ## Demo
-The script output should look like the example below.
+The script output should look like the example below. Details have been redacted.
+
+![alt text](../screenshots/check_userID_demo.png)

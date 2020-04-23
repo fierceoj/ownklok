@@ -43,5 +43,5 @@ Then, run the script against the MAC address.
 ![alt text](../screenshots/attacker_scenario_proximate_demo.png)
 
 # Acknowledgements
-Both scenarios took inspiration from the PoC [here](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py), and similar methods were used for the unbind and bind functions of the code. See Acknowledgements section on the root README.md.
+Both scenarios took inspiration from the PoC [here](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py), and similar API methods were used for the unbind and bind functions of the code. See Acknowledgements section on the root README.md.
 

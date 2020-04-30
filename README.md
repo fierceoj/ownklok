@@ -5,7 +5,7 @@ PoC code for vulnerabilities in the OKLOK (3.1.1) mobile companion app for Finge
 ```CVE-2020-8792``` <br/>
 ```CVE-2020-10876```
 
-This repo also contains two attack scenarios which combine my CVE-2020-8791 exploit with methods similar to the CVE-2019-13143 PoC by SecureLayer7 ([pwnfb50.py](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)).
+This repo also contains two attack scenarios which combine my CVE-2020-8791 PoC with methods similar to the CVE-2019-13143 PoC by SecureLayer7 ([pwnfb50.py](https://github.com/securelayer7/pwnfb50/blob/master/pwnfb50.py)).
 
 # Requirements
 - python3 <br/>
